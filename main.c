@@ -8,15 +8,9 @@
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 
-node_t *node = NULL;
-
-void pall_function(node_t **head, unsigned int line)
-{
-	printf("pall function activated\n");
-}
-
 int main(int argc, char **argv)
 {
+	node_t *node = NULL; 
 	char *path;
 	FILE *fd;
 	unsigned int linenum = 1;
