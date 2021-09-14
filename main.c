@@ -10,11 +10,6 @@
 
 node_t *node = NULL;
 
-void push_function(node_t **head, unsigned int line)
-{
-	printf("push function activated\n");
-}
-
 void pall_function(node_t **head, unsigned int line)
 {
 	printf("pall function activated\n");
