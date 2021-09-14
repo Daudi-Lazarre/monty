@@ -1,5 +1,13 @@
 #include "monty.h"
 
+/**
+ * main - The monty program in a nutshell
+ * @argc: Number of arguments
+ * @argv: The argument options
+ *
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
+ */
+
 node_t *node = NULL;
 
 void push_function(node_t **head, unsigned int line)
@@ -19,7 +27,8 @@ int main(int argc, char **argv)
 	unsigned int linenum = 1;
 	char *buffer = NULL;
 	size_t size = 0;
-	char *opcode = NULL, *command = NULL;
+	char *opcode = NULL;
+	char *command = NULL;
 	int i = 0;
 
 	if (argc != 2)
