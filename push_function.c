@@ -1,4 +1,4 @@
-#include "monthy.h"
+#include "monty.h"
 
 /**
  * push_function - Pushes a new node
@@ -10,7 +10,23 @@
 
 void push_function(node_t **head, unsigned int line)
 {
-	printf("push function activated\n");
+	 dlistint_t *new;
 
-	return(0);
+	 if (!head)
+		 return(NULL);
+
+	 new = malloc(sizeof(dlistint_t));
+
+	 if (!new)
+		 return(NULL);
+
+	 line = new->line;
+	 *head = line->next;
+	 new->prev = NULL;
+
+	 if (*head)
+		 (*head)->prev = new;
+
+	 *head = new;
+
 }

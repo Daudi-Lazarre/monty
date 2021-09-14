@@ -10,7 +10,12 @@
 
 void pall_function(node_t **head, unsigned int line)
 {
-	printf("pall function activated\n");
+	int count = 0;
 
-	return(0);
+	while (head != NULL)
+	{
+		printf("%d\n", head->n);
+		count++;
+		head = head->next;
+	}
 }
