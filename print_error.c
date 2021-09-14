@@ -1,4 +1,18 @@
 #include "monty.h"
+
+/**
+* print_error - prints the error messages
+* @n_error: int error code
+* @line_number: the number of the line where error took place
+*
+* Return: Void
+*/
+void print_error(int n_error, unsigned int line_number)
+{
+	if (print_err_a(n_error, line_number) == ERROR_FOUND)
+	exit(EXIT_FAILURE);
+}
+
 /**
 * print_error - prints the error messages
 * @n_error: int error code
