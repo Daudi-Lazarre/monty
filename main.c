@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-	node_t *node = NULL; 
+	node_t *node = NULL;
 	char *path;
 	FILE *fd;
 	unsigned int linenum = 1;
@@ -32,27 +32,27 @@ int main(int argc, char **argv)
 		perror("Error");
 if (!path)
 		perror("Bad file name");
-​
+
 	fd = fopen(path, "r");
-​
+
 	if (!fd)
 		perror("Bad file descriptor");
-​
+
 	/* Check that we can access & read the file */
 	if(access(path, R_OK) == -1)
 		perror("Error reading");
-​
+
 	while (getline(&buffer, &size, fd) != EOF)
 	{
 		opcode = strtok(buffer, " \n"); /* opcode (ie: PUSH, PALL, PINT) */
 		command = strtok(NULL, " \n"); /* NULL unless there's a number for PUSH */
-​
+
 		instruction_t opcodes[] = {
 			{"push", push_function},
 			{"pall", pall_function},
 			{NULL, NULL}
 		};
-​
+
 		for (i = 0; opcodes[i].opcode != NULL; i++)
 		{
 			if (strcmp(opcode, opcodes[i].opcode) == 0)
@@ -60,13 +60,12 @@ if (!path)
 				/* function pointer ran with the opcode matched from
 					opcodes[] list */
 				opcodes[i].f(&node, linenum);
-​
+
 			}
 		}
-​
+
 	}
-​
+
 	fclose(fd);
 	free(buffer);
-​
 	return (0);

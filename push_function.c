@@ -5,7 +5,7 @@
  * @head: New node
  * @line: Line to read
  *
- * Return: EXIT_SUCCESS or EXIT_FAILURE
+ * Return: Void
  */
 
 void push_function(node_t **head, unsigned int line)
