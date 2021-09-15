@@ -46,6 +46,10 @@ void print_error(int n_error, unsigned int line_number)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 	}
+	else if (n_error == MALLOC_ERR)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+	}
 	exit(EXIT_FAILURE);
 
 }

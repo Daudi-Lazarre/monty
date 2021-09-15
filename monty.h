@@ -19,6 +19,7 @@
 #define ERR_POP 3
 #define ERR_SWAP 4
 #define ERR_ADD 5
+#define ERR_MALLOC 6
 
 #define ERROR_FOUND 0
 #define ERROR_NOT_FOUND 1
