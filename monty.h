@@ -13,11 +13,12 @@
 
 /* MACROS */
 
-#define ERR_PUSH 0
-#define ERR_PINT 1
-#define ERR_POP 2
-#define ERR_SWAP 3
-#define ERR_ADD 4
+#define ERR_ARG 0
+#define ERR_PUSH 1
+#define ERR_PINT 2
+#define ERR_POP 3
+#define ERR_SWAP 4
+#define ERR_ADD 5
 
 #define ERROR_FOUND 0
 #define ERROR_NOT_FOUND 1
@@ -60,9 +61,8 @@ typedef struct instruction_s
 
 /* functions */
 
-void print_err_a(int n_error, unsigned int line_number);
 void print_error(int n_error, unsigned int line_number);
-void print_err_a(int n_error, unsigned int line_number);
+/* void print_err_a(int n_error, unsigned int line_number); */
 
 /* opcode functions */
 
