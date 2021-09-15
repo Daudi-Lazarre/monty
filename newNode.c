@@ -12,7 +12,7 @@ node_t *add_dnodeint(int num)
 
 	new = malloc(sizeof(node_t));
 	if (!new)
-		print_error(ERR_MALLOC);
+		print_error(ERR_MALLOC, 0);
 
 	new->n = num;
 	new->next = NULL;

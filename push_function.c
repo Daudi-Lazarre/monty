@@ -10,27 +10,12 @@
 
 void push_function(node_t **head, unsigned int line_number)
 {
-	char *new;
-	int i, num;
-	const char *ints = "0123456789";
+	node_t *new;
+	(void)line_number;
 
-	(void)head;
-
-	new = strtok(NULL, " \t");
-	printf("%s", new);
-	if (new && new[0] != '\n')
-	{
-		for (i = 0; new[i] && new[i] != '\n'; i++)
-		{
-			if (i == 0 && new[i] == '-')
-				continue;
-			if (!(strchr(ints, new[i])))
-				print_error(ERR_PUSH, line_number);
-		}
-	}
-	else
-	{
-		print_error(ERR_PUSH, line_number);
-	}
-	num = atoi(new);
+	new = node ;
+	new->prev = NULL;
+	node = *head;
+	node->next = new;
+	new->prev = node;
 }

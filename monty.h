@@ -58,6 +58,10 @@ typedef struct instruction_s
 	void (*f)(node_t **stack, unsigned int line_number);
 } instruction_t;
 
+/*extern variable*/
+
+extern node_t *node;
+
 /* ------------ */
 
 /* functions */

@@ -1,5 +1,7 @@
 #include "monty.h"
 
+node_t *node = NULL;
+
 /**
  * main - The monty program in a nutshell
  * @argc: Number of arguments
@@ -11,15 +13,15 @@
 int main(int argc, char **argv)
 {
 	node_t *node = NULL;
-	char *path;
-	FILE *fd;
+	char *path = NULL;
+	FILE *fd = NULL;
 	unsigned int linenum = 1;
 	char *buffer = NULL;
 	size_t size = 0;
 	char *opcode = NULL;
 	char *command = NULL;
 	int i = 0;
-//	node_t *newNode;
+	node_t *newNode;
 	instruction_t opcodes[] = {
 
                         {"push", push_function},
@@ -42,8 +44,6 @@ int main(int argc, char **argv)
 	path = argv[1];
 
 	if (!path)
-		perror("Error");
-if (!path)
 		perror("Bad file name");
 
 	fd = fopen(path, "r");
@@ -60,20 +60,28 @@ if (!path)
 		opcode = strtok(buffer, " \n"); /* opcode (ie: PUSH, PALL, PINT) */
 		command = strtok(NULL, " \n"); /* NULL unless there's a number for PUSH */
 
-		/* MARKDOWN: You are here */
-		//if ((strcmp(opcode, opcodes[i].opcode) == 0))
-		//{
-		//	newNode = ERR_PUSH;
-		//}
-
+		printf("%s helllooo", opcode);
+		printf("%s helllooo", command);
 	        for (i = 0; opcodes[i].opcode != NULL; i++)
 		{
 			if (strcmp(opcode, opcodes[i].opcode) == 0)
 			{
-				/* function pointer ran with the opcode matched from
-					opcodes[] list */
-				opcodes[i].f(&node, linenum);
+					printf("helloooo");
 
+					/* function pointer ran with the opcode matched from
+					opcodes[] list */
+
+			 if ((strcmp(opcode, "push") == 0))
+                		{
+					printf("faiailling?");
+                        		newNode = add_dnodeint(atoi(command));
+					opcodes[i].f(&newNode, linenum);
+                		}
+			else
+				{
+				printf("helllllo");
+				opcodes[i].f(&node, linenum);
+				}
 			}
 		}
 
