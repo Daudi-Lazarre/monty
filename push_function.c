@@ -3,16 +3,18 @@
 /**
  * push_function - Pushes a new node
  * @head: New node
- * @line: Line to read
+ * @line_number: Line to read
  *
  * Return: Void
  */
 
-void push_function(__attribute__((unused)) node_t **head, unsigned int line_number)
+void push_function(node_t **head, unsigned int line_number)
 {
 	char *new;
 	int i, num;
 	const char *ints = "0123456789";
+
+	(void)head;
 
 	new = strtok(NULL, " \t");
 	if (new && new[0] != '\n')

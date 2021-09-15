@@ -27,7 +27,7 @@
 /* STRUCTS */
 
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
+ * struct node_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
@@ -37,9 +37,9 @@
  */
 typedef struct node_s
 {
-        int n;
-        struct node_s *prev;
-        struct node_s *next;
+	int n;
+	struct node_s *prev;
+	struct node_s *next;
 } node_t;
 
 /**
@@ -52,8 +52,8 @@ typedef struct node_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(node_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(node_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* ------------ */
