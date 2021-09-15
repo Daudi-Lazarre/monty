@@ -6,26 +6,17 @@
  * Return: New node :)
  **/
 
-node_t *add_dnodeint(int n)
+node_t *add_dnodeint(int num)
 {
 	node_t *new;
 
-	if (!head)
-		return (NULL);
-
 	new = malloc(sizeof(node_t));
 	if (!new)
-		return (NULL);
+		print_error(ERR_MALLOC);
 
-	new->n = n;
-
-	new->next = *head;
+	new->n = num;
+	new->next = NULL;
 	new->prev = NULL;
-
-	if (*head)
-		(*head)->prev = new;
-
-	*head = new;
 
 	return (new);
 }
