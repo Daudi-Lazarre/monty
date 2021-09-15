@@ -50,6 +50,10 @@ if (!path)
 		instruction_t opcodes[] = {
 			{"push", push_function},
 			{"pall", pall_function},
+			{"pop", pop},
+			{"swap", swap}
+			{"add", add},
+			{"pint", pint},
 			{NULL, NULL}
 		};
 
