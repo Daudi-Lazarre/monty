@@ -17,6 +17,7 @@ void push_function(node_t **head, unsigned int line_number)
 	(void)head;
 
 	new = strtok(NULL, " \t");
+	printf("%s", new);
 	if (new && new[0] != '\n')
 	{
 		for (i = 0; new[i] && new[i] != '\n'; i++)

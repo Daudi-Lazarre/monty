@@ -19,8 +19,8 @@ int main(int argc, char **argv)
 	char *opcode = NULL;
 	char *command = NULL;
 	int i = 0;
+//	node_t *newNode;
 	instruction_t opcodes[] = {
-
 
                         {"push", push_function},
                         {"pall", pall_function},
@@ -32,10 +32,9 @@ int main(int argc, char **argv)
                         {NULL, NULL}
                 };
 
-
 	if (argc != 2)
 	{
-		print_error(linenum, ERR_ARG);
+		print_error(ERR_ARG, linenum);
 	        // print_error("Bad argument count");
 	}
 
@@ -61,8 +60,13 @@ if (!path)
 		opcode = strtok(buffer, " \n"); /* opcode (ie: PUSH, PALL, PINT) */
 		command = strtok(NULL, " \n"); /* NULL unless there's a number for PUSH */
 
+		/* MARKDOWN: You are here */
+		//if ((strcmp(opcode, opcodes[i].opcode) == 0))
+		//{
+		//	newNode = ERR_PUSH;
+		//}
 
-		for (i = 0; opcodes[i].opcode != NULL; i++)
+	        for (i = 0; opcodes[i].opcode != NULL; i++)
 		{
 			if (strcmp(opcode, opcodes[i].opcode) == 0)
 			{
