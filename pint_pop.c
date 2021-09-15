@@ -6,7 +6,7 @@
  * @line_number: number line
  */
 
-void pint(node_t **head, unsigned int line_number)
+void pint(stack_t **head, unsigned int line_number)
 {
 	/*If it's not the head, print the error */
 	if (!head || !*head)
@@ -19,7 +19,7 @@ void pint(node_t **head, unsigned int line_number)
  * @line_number: number line
  */
 
-void pop(node_t **head, unsigned int line_number)
+void pop(stack_t **head, unsigned int line_number)
 {
 	dlistint_t *nextInLine;
 
