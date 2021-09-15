@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-* swap_function - swap the top two elements of the stack
+* swap - swap the top two elements of the stack
 *
 * @head: the stack
 * @line_number: the integer to be added to the stack
@@ -29,7 +29,7 @@ void add(node_t **head, unsigned int line_number)
 {
 	unsigned int temp;
 
-	if (!(*head) ||!(*head)->next)
+	if (!(*head) || !(*head)->next)
 		print_error(ERR_ADD, line_number);
 
 
@@ -38,4 +38,4 @@ void add(node_t **head, unsigned int line_number)
 	(*head)->n = temp;
 	free((*head)->prev);
 	(*head)->prev = NULL;
-}	
+}
