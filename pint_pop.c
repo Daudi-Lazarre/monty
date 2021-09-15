@@ -24,8 +24,8 @@ void pop(node_t **head, unsigned int line_number)
 {
 	node_t *nextInLine;
 
-	   if (!(*head))
-                print_error(ERR_POP, line_number);
+	if (!(*head))
+		print_error(ERR_POP, line_number);
 
 	nextInLine = (*head)->next;
 	if (nextInLine)
