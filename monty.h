@@ -66,11 +66,11 @@ void print_err_a(int n_error, unsigned int line_number);
 
 /* opcode functions */
 
-void push_function(node_t **head, unsigned int line);
-void pall_function(node_t **head, unsigned int line);
-void swap(node_t **head, unsigned int line_number);
-void add(node_t **head, unsigned int line_number);
-void pint(node_t **head, unsigned int line_number);
-void pop(node_t **head, unsigned int line_number);
+void push_function(stack_t **head, unsigned int line);
+void pall_function(stack_t **head, unsigned int line);
+void swap(stack_t **head, unsigned int line_number);
+void add(stack_t **head, unsigned int line_number);
+void pint(stack_t **head, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
 
 #endif
