@@ -6,21 +6,21 @@
 * @line_number: the number of the line where error took place
 *
 * Return: Void
+*
+*void print_error(int n_error, unsigned int line_number)
+*	{
+*	if (print_err_a(n_error, line_number) == ERROR_FOUND)
+*	exit(EXIT_FAILURE
+*	}
 */
-void print_error(int n_error, unsigned int line_number)
-{
-	if (print_err_a(n_error, line_number) == ERROR_FOUND)
-	exit(EXIT_FAILURE);
-}
-
 /**
-* print_error - prints the error messages
+* print_err_a - prints the error messages
 * @n_error: int error code
 * @line_number: the number of the line where error took place
 *
 * Return: ERR_FOUND or ERR_NOT_FOUND
 */
-void print_err_a(int n_error, unsigned int line_number)
+void print_error(int n_error, unsigned int line_number)
 {
 	if (n_error == ERR_PUSH)
 	{
@@ -42,10 +42,10 @@ void print_err_a(int n_error, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 	}
-	else
+	else if (n_error == ERR_ARG)
 	{
-		return (ERROR_NOT_FOUND);
+		fprintf(stderr, "USAGE: monty file\n");
 	}
-	
-	return (ERROR_FOUND);
+	exit(EXIT_FAILURE);
+
 }
