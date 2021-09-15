@@ -8,14 +8,12 @@
  * Return: Void
  */
 
-void pall_function(node_t **head, unsigned int line)
+void pall_function(node_t **head,__attribute__((unused)) unsigned int line)
 {
-	int count = 0;
+	node_t *count;
 
-	while (head != NULL)
+	for (count = *head; count; count = count->next)
 	{
-		printf("%d\n", head->n);
-		count++;
-		head = head->next;
+		printf("%d\n", count->n);
 	}
 }
