@@ -38,7 +38,7 @@ void pop(stack_t **head, unsigned int line_number)
  * @head: Top of the stack
  * @line_number: Line number
  */
-void nop(**head, unsigned int line_number __attribute__(()unused))
+void nop(stack_t **head, unsigned int line_number __attribute__(()unused))
 {
 	(void)head;
 }
