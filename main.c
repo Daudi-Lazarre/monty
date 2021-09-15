@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	char *opcode = NULL;
 	char *command = NULL;
 	int i = 0;
-	instruction_t opcodes[] = { 
+	instruction_t opcodes[] = {
 
 
                         {"push", push_function},
@@ -32,10 +32,11 @@ int main(int argc, char **argv)
                         {NULL, NULL}
                 };
 
- 
+
 	if (argc != 2)
 	{
-		print_error("Bad argument count");
+		print_error(linenum, ERR_ARG);
+	        // print_error("Bad argument count");
 	}
 
 	/* argv[1] is the file name from command line */

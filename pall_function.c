@@ -13,7 +13,7 @@ void pall_function(node_t **head, __attribute__((unused)) unsigned int line)
 	node_t *count;
 
 	if (!(*head) ||!(*head)->next)
-	
+
 
 
 	for (count = *head; count; count = count->next)
