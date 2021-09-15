@@ -14,7 +14,7 @@ void swap(node_t **head, unsigned int line_number)
 		print_error(ERR_SWAP, line_number);
 
 	temp = (*head)->n;
-	(*head-> ((*head)->next)->n;
+	(*head)->n = ((*head)->next)->n;
 	((*head)->next)->n = temp;
 }
 
@@ -32,8 +32,9 @@ void add(node_t **head, unsigned int line_number)
 	if (!(*head) ||!(*head)->next)
 		print_error(ERR_ADD, line_number);
 
+
 	(*head) = (*head)->next;
-	temp = (*head)-> + (*head)->prev->n;
+	temp = (*head)->n + (*head)->prev->n;
 	(*head)->n = temp;
 	free((*head)->prev);
 	(*head)->prev = NULL;

@@ -8,25 +8,26 @@
  * Return: Void
  */
 
-void push_function(node_t **head, unsigned int line)
+void push_function(__attribute__((unused)) node_t **head, unsigned int line_number)
 {
-	 dlistint_t *new;
+	char *new;
+	int i, num;
+	const char *ints = "0123456789";
 
-	 if (!head)
-		 return(NULL);
-
-	 new = malloc(sizeof(dlistint_t));
-
-	 if (!new)
-		 return(NULL);
-
-	 line = new->line;
-	 *head = line->next;
-	 new->prev = NULL;
-
-	 if (*head)
-		 (*head)->prev = new;
-
-	 *head = new;
-
+	new = strtok(NULL, " \t");
+	if (new && new[0] != '\n')
+	{
+		for (i = 0; new[i] && new[i] != '\n'; i++)
+		{
+			if (i == 0 && new[i] == '-')
+				continue;
+			if (!(strchr(ints, new[i])))
+				print_error(ERR_PUSH, line_number);
+		}
+	}
+	else
+	{
+		print_error(ERR_PUSH, line_number);
+	}
+	num = atoi(new);
 }

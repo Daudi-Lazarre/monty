@@ -72,6 +72,6 @@ void swap(node_t **head, unsigned int line_number);
 void add(node_t **head, unsigned int line_number);
 void pint(node_t **head, unsigned int line_number);
 void pop(node_t **head, unsigned int line_number);
-void nop(node_t **head, unsigned int line_number __attribute__(()unused));
+void nop(node_t **head, unsigned int line_number __attribute__((unused)));
 
 #endif
