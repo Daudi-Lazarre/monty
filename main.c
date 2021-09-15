@@ -53,6 +53,7 @@ if (!path)
 			{"pop", pop},
 			{"swap", swap}
 			{"add", add},
+			{"nop", nop},
 			{"pint", pint},
 			{NULL, NULL}
 		};

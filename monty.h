@@ -7,7 +7,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <unistd.h>
+#include <stdarg.h>
+#include <ctype.h>
 
 /* MACROS */
 
@@ -59,12 +61,16 @@ typedef struct instruction_s
 /* functions */
 
 void print_err_a(int n_error, unsigned int line_number);
-
+void print_error(int n_error, unsigned int line_number);
+void print_err_a(int n_error, unsigned int line_number);
 
 /* opcode functions */
 
 void push_function(node_t **head, unsigned int line);
 void pall_function(node_t **head, unsigned int line);
-
+void swap(node_t **head, unsigned int line_number);
+void add(node_t **head, unsigned int line_number);
+void pint(node_t **head, unsigned int line_number);
+void pop(node_t **head, unsigned int line_number);
 
 #endif
