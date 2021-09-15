@@ -8,7 +8,7 @@
  * Return: Void
  */
 
-void push_function(stack_t **head, unsigned int line)
+void push_function(node_t **head, unsigned int line)
 {
 	 dlistint_t *new;
 

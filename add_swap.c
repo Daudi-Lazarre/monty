@@ -6,7 +6,7 @@
 * @line_number: the integer to be added to the stack
 * Return: Void
 */
-void swap(stack_t **head, unsigned int line_number)
+void swap(node_t **head, unsigned int line_number)
 {
 	unsigned int temp;
 
@@ -25,7 +25,7 @@ void swap(stack_t **head, unsigned int line_number)
 * @line_number: the integer to be added to the stack
 * Return: Void
 */
-void add(stack_t **head, unsigned int line_number)
+void add(node_t **head, unsigned int line_number)
 {
 	unsigned int temp;
 

@@ -35,12 +35,12 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct stack_s
+typedef struct node_s
 {
         int n;
-        struct stack_s *prev;
-        struct stack_s *next;
-} stack_t;
+        struct node_s *prev;
+        struct node_s *next;
+} node_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -53,7 +53,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(node_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* ------------ */
@@ -66,12 +66,12 @@ void print_err_a(int n_error, unsigned int line_number);
 
 /* opcode functions */
 
-void push_function(stack_t **head, unsigned int line);
-void pall_function(stack_t **head, unsigned int line);
-void swap(stack_t **head, unsigned int line_number);
-void add(stack_t **head, unsigned int line_number);
-void pint(stack_t **head, unsigned int line_number);
-void pop(stack_t **head, unsigned int line_number);
-void nop(stack_t **head, unsigned int line_number __attribute__(()unused));
+void push_function(node_t **head, unsigned int line);
+void pall_function(node_t **head, unsigned int line);
+void swap(node_t **head, unsigned int line_number);
+void add(node_t **head, unsigned int line_number);
+void pint(node_t **head, unsigned int line_number);
+void pop(node_t **head, unsigned int line_number);
+void nop(node_t **head, unsigned int line_number __attribute__(()unused));
 
 #endif

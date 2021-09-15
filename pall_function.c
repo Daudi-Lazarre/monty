@@ -8,7 +8,7 @@
  * Return: Void
  */
 
-void pall_function(stack_t **head, unsigned int line)
+void pall_function(node_t **head, unsigned int line)
 {
 	int count = 0;
 

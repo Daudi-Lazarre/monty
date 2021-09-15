@@ -6,7 +6,7 @@
  * @line_number: number line
  */
 
-void pint(stack_t **head, unsigned int line_number)
+void pint(node_t **head, unsigned int line_number)
 {
 	/*If it's not the head, print the error */
 	if (!head || !*head)
@@ -19,7 +19,7 @@ void pint(stack_t **head, unsigned int line_number)
  * @line_number: number line
  */
 
-void pop(stack_t **head, unsigned int line_number)
+void pop(node_t **head, unsigned int line_number)
 {
 	dlistint_t *nextInLine;
 
@@ -38,7 +38,7 @@ void pop(stack_t **head, unsigned int line_number)
  * @head: Top of the stack
  * @line_number: Line number
  */
-void nop(stack_t **head, unsigned int line_number __attribute__(()unused))
+void nop(node_t **head, unsigned int line_number __attribute__(()unused))
 {
 	(void)head;
 }
