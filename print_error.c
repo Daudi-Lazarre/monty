@@ -20,6 +20,7 @@
 *
 * Return: ERR_FOUND or ERR_NOT_FOUND
 */
+
 void print_error(int n_error, unsigned int line_number)
 {
 	if (n_error == ERR_PUSH)
@@ -50,6 +51,8 @@ void print_error(int n_error, unsigned int line_number)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 	}
+	else if (n_error == ERR_FOPEN)
+		fprintf(stderr, "Error: Can't open file %u\n", line_number);
 	exit(EXIT_FAILURE);
 
 }
