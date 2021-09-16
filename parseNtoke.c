@@ -53,8 +53,9 @@ while (getline(&buffer, &size, fd) != EOF)
 				else
 					opcodes[i].f(&node, linenum);
 			}
-			linenum++;
+
 		}
+		linenum++;
 	}
 free(buffer);
 fclose(fd);
