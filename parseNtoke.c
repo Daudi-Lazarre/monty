@@ -10,13 +10,13 @@
 
 void parseNtoke(FILE *fd)
 {
-	char *buffer;
+	char *buffer = NULL;
 	int i;
 	size_t size;
 	char *opcode;
 	char *command;
-	node_t newNode;
-	unsigned int linenum;
+	node_t *newNode;
+	unsigned int linenum = 1;
 	instruction_t opcodes [] = {
 		{"push", push_function},
 		{"pall", pall_function},
@@ -53,7 +53,10 @@ while (getline(&buffer, &size, fd) != EOF)
 				else
 					opcodes[i].f(&node, linenum);
 			}
+			linenum++;
 		}
 	}
 free(buffer);
+fclose(fd);
+return;
 }

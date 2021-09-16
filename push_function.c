@@ -10,12 +10,22 @@
 
 void push_function(node_t **head, unsigned int line_number)
 {
-	node_t *temp;
+        node_t *temp;
 	(void)line_number;
+	(void)head;
 
-	temp = node;
-	temp->prev = NULL;
-	node = *head;
-        node->next = temp;
-	temp->prev = node;
+	if (!node)
+	{
+		node = *head;
+		node->next = NULL;
+		node->prev = NULL;
+	}
+	else
+	{
+		temp = node;
+		// temp->prev = NULL;
+		node = *head;
+		node->next = temp;
+		temp->prev = node;
+	}
 }
