@@ -8,34 +8,32 @@
  * Return: Void
  */
 
-/* Insert program name */
+void parseNtoke(FILE *fd)
 {
 	char *buffer;
+	int i;
 	size_t size;
-	FILE *fd;
 	char *opcode;
 	char *command;
 	node_t newNode;
 	unsigned int linenum;
-	instruction_t opcode [] = {
-		{push, }
-		{pall, }
-		{pop, }
-		{swap, }
-		{add, }
-		{nop, }
-		{pint, }
+	instruction_t opcodes [] = {
+		{"push", push_function},
+		{"pall", pall_function},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"pint", pint},
 		{NULL, NULL}
-		
-	}
-}
+	};
+
 
 while (getline(&buffer, &size, fd) != EOF)
 	{
 		opcode = strtok(buffer, " \n"); /* opcode (ie: PUSH, PALL, PINT) */
-		/* CHECKER */
 		if (!opcode)
-			return(0);
+			return;
 
 		command = strtok(NULL, " \n"); /* NULL unless there's a number for PUSH */
 
@@ -57,3 +55,5 @@ while (getline(&buffer, &size, fd) != EOF)
 			}
 		}
 	}
+free(buffer);
+}

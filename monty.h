@@ -71,6 +71,7 @@ void print_error(int n_error, unsigned int line_number);
 
 /* opcode functions */
 
+void parseNtoke(FILE *fd);
 node_t *add_dnodeint(int n);
 void push_function(node_t **head, unsigned int line);
 void pall_function(node_t **head, unsigned int line);
