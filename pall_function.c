@@ -10,14 +10,15 @@
 
 void pall_function(node_t **head, __attribute__((unused)) unsigned int line)
 {
-	node_t *count;
+	node_t *temp_node;
 
-	if (!(*head) ||!(*head)->next)
-
-
-
-	for (count = *head; count; count = count->next)
+	if (head && *head)
 	{
-		printf("%d\n", count->n);
+		temp_node = *head;
+		while (temp_node)
+		{
+			fprintf(stdout, "%d\n", temp_node->n);
+			temp_node = temp_node->next;
+		}
 	}
 }

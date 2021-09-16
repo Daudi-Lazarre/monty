@@ -10,14 +10,12 @@
 
 void push_function(node_t **head, unsigned int line_number)
 {
-	node_t *new;
+	node_t *temp;
 	(void)line_number;
 
-	new = *head;
-	printf("%d DOLPHINS AND KILLER WHALES\n", (*head)->n);
-	new->prev = NULL;
-	printf("GERMAN SHEPHERDS AND SCHNAUZERS.\n");
+	temp = node;
+	temp->prev = NULL;
 	node = *head;
-	node->next = new;
-	new->prev = node;
+        node->next = temp;
+	temp->prev = node;
 }

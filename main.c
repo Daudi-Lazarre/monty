@@ -12,7 +12,7 @@ node_t *node = NULL;
 
 int main(int argc, char **argv)
 {
-	node_t *node = NULL;
+	//node_t *node = NULL;
 	char *path = NULL;
 	FILE *fd = NULL;
 	unsigned int linenum = 1;
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	char *opcode = NULL;
 	char *command = NULL;
 	int i = 0;
-	node_t *newNode;
+	node_t *newNode = NULL;
 	instruction_t opcodes[] = {
 
                         {"push", push_function},
@@ -33,6 +33,7 @@ int main(int argc, char **argv)
                         {"pint", pint},
                         {NULL, NULL}
                 };
+
 
 	if (argc != 2)
 	{
@@ -55,7 +56,33 @@ int main(int argc, char **argv)
 	if(access(path, R_OK) == -1)
 		perror("Error reading");
 
-	/* MARKDOWN: Code was here before new function. */
+	while (getline(&buffer, &size, fd) != EOF)
+	{
+		opcode = strtok(buffer, " \n"); /* opcode (ie: PUSH, PALL, PINT) */
+		/* CHECKER */
+		if (!opcode)
+			return(0);
+
+		command = strtok(NULL, " \n"); /* NULL unless there's a number for PUSH */
+
+		for (i = 0; opcodes[i].opcode != NULL; i++)
+		{
+			if (strcmp(opcode, opcodes[i].opcode) == 0)
+			{
+
+					/* function pointer ran with the opcode matched from
+					opcodes[] list */
+
+			 	if (strcmp(opcodes[i].opcode, "push") == 0)
+                {
+                    newNode = add_dnodeint(atoi(command));
+						opcodes[i].f(&newNode, linenum);
+                }
+				else
+					opcodes[i].f(&node, linenum);
+			}
+		}
+	}
 
 	fclose(fd);
 	free(buffer);
