@@ -8,6 +8,28 @@
  * Return: Void
  */
 
+/* Insert program name */
+{
+	char *buffer;
+	size_t size;
+	FILE *fd;
+	char *opcode;
+	char *command;
+	node_t newNode;
+	unsigned int linenum;
+	instruction_t opcode [] = {
+		{push, }
+		{pall, }
+		{pop, }
+		{swap, }
+		{add, }
+		{nop, }
+		{pint, }
+		{NULL, NULL}
+		
+	}
+}
+
 while (getline(&buffer, &size, fd) != EOF)
 	{
 		opcode = strtok(buffer, " \n"); /* opcode (ie: PUSH, PALL, PINT) */
